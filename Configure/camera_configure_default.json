@@ -1,0 +1,20 @@
+{
+    "BasicSetting":{
+        "nameRule":0,
+        "filetype":0,
+        "ImageSize":[4608, 2592],
+        "RoteIndex":0
+        },
+    
+    "ImageTuning":{
+        "Saturation":1.0,
+        "Contrast":1.0,
+        "Sharpness":1.0,
+        "Brightness":0.0
+        },
+    
+    "FocusSetting":{
+        "AfMode":0,
+        "LensPosition":1
+        }
+}

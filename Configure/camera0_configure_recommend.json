@@ -1,0 +1,48 @@
+{
+    "BasicSetting": {
+        "nameRule": 0,
+        "filetype": 0,
+        "sensorFormat": {
+            "size": [
+                4608,
+                2592
+            ],
+            "format": "SRGGB10_CSI2P"
+        },
+        "ImageSize": [
+            4608,
+            2592
+        ],
+        "RoteIndex": 1
+    },
+    "ImageTuning": {
+        "Saturation": 1.0,
+        "Contrast": 1.0,
+        "Sharpness": 1.0,
+        "Brightness": 0.0
+    },
+    "FocusSetting": {
+        "AfMode": 0,
+        "LensPosition": 3.1
+    },
+    "ImageTransform": {
+        "AcrylicPoints": [
+            [
+                60,
+                589
+            ],
+            [
+                2260,
+                652
+            ],
+            [
+                2240,
+                3991
+            ],
+            [
+                44,
+                4030
+            ]
+        ]
+    }
+}

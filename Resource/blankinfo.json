@@ -1,0 +1,13 @@
+{
+  "id": "",
+  "isbn": "XXXXXXXXXXXXX",
+  "title": "NewBook",
+  "author": "NewAuthor",
+  "publisher": "NewCompany",
+  "pubdate": "YYYYMMDD",
+  "pages":"XXX",
+  "price":"XXX",
+  "binder":"left",
+  "moddate": "YYYYMMDD",
+  "ordered" :[]
+}
