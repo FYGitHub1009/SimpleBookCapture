@@ -23,9 +23,26 @@
     },
     "FocusSetting": {
         "AfMode": 0,
-        "LensPosition": 2.6
+        "LensPosition": 2.69
     },
-    "ImageTransform":{
-        "AcrylicPoints":[[351, 605], [2446, 560], [2475, 3979], [348, 3921]]
+    "ImageTransform": {
+        "AcrylicPoints": [
+            [
+                353,
+                625
+            ],
+            [
+                2466,
+                566
+            ],
+            [
+                2489,
+                4005
+            ],
+            [
+                356,
+                3945
+            ]
+        ]
     }
 }

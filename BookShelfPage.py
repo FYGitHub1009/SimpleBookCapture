@@ -346,7 +346,6 @@ class BookShelfPage(QWidget):
             image_paths = np.append(image_paths, os.path.join(book_dir, f"back_{postfix}.jpg"))
         else:
             image_paths = [os.path.join(book_dir, f"front_{postfix}.jpg"), os.path.join(book_dir, f"back_{postfix}.jpg")]
-        print(image_paths)
         self.bookPreview.reset(image_paths)
         
         # 左右綴じフラグ
@@ -490,7 +489,6 @@ class BookShelfPage(QWidget):
     def on_exportBookButton_clicked(self):
         # 選択行の確認
         indexes = self.bookShelf.selectionModel().selectedRows()
-        print(indexes)
         if len(indexes)==0:
             return
         
@@ -547,10 +545,10 @@ class BookShelfPage(QWidget):
             shutil.copy(src, dst)
         
         # フォルダ保存の場合
-        if os.path.isdir(dialog.save_path):
+        if os.path.splitext(dialog.save_path)[1] == "":
             # 一時フォルダをリネームして移動する
             src = tmp_dir
-            dst = dialog.selected_path
+            dst = dialog.save_path
             shutil.move(src, dst)
        
         # tar指定の場合 

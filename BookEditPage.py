@@ -959,7 +959,7 @@ class BookEditPage(QWidget):
             self.leftComboBox.setEnabled(False)
             
             # 右コンボボックスの選択肢を更新
-            model = get_combobox_model([0])
+            model = get_combobox_model([0,3])
             self.rightComboBox.setModel(model)
             self.rightComboBox.setCurrentIndex(1)
             
@@ -1067,17 +1067,13 @@ class BookEditPage(QWidget):
     def on_isbnButton_clicked(self):
         # 右コンボボックスの選択行
         index = self.rightComboBox.currentIndex()
-        
-        # 表紙or裏表紙
-        book_dir = os.path.join(".", "BookShelf", self.bookid)
-        filename = os.path.join(book_dir, "front.jpg" if index==2 else "back.jpg")
-        pimage = Image.open(filename)
             
         # カメラプレビューの場合
         if index in [0, 1]:
             # カメラ番号
             camid = self.rightComboBox.currentIndex()
             # 静止画撮影
+            book_dir = os.path.join(".", "BookShelf", self.bookid)
             filename = os.path.join(book_dir, "tmp.jpg")
             picam2s[camid].switch_mode_and_capture_file(piconfigs[camid]["still"], filename)
             # 回転変換
@@ -1089,7 +1085,18 @@ class BookEditPage(QWidget):
             pimage = qimage_to_pilimage(qimage)
             # 一時ファイル削除
             os.remove(filename)
-        
+        else:
+            # 表紙or裏表紙
+            cover = 'front' if self.coverComboBox.currentIndex()==0 else 'back'
+            # オリジナルor変換済み
+            post = 'original' if self.rightComboBox.currentIndex()==2 else 'transformed'
+            # ファイル名
+            filename = os.path.join(".", "BookShelf", self.bookid, f"{cover}_{post}.jpg")
+            # 読み込み
+            qimage = QImage(filename)
+            # PIL変換
+            pimage = qimage_to_pilimage(qimage)
+
         # ISBN読み取り
         isbn = [x.data.decode() for x in pyzbar.decode(pimage) if x.data.decode().startswith('97')]
         
