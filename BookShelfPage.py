@@ -151,7 +151,12 @@ class BookShelfPage(QWidget):
     # 初期化
     def __init__(self):
         # 初期化
-        super().__init__()  
+        super().__init__()
+
+        # 本棚フォルダ作成
+        bookshelf =os.path.join(".", "BookShelf")
+        if os.path.exists(bookshelf)==False:
+            shutil.mkdir(bookshelf)
 
         # 新規作成ボタン
         newBookButton = QPushButton("新規作成")
