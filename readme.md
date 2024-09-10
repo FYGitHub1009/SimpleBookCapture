@@ -1,5 +1,5 @@
 # SimpleBookCapture
-非破壊で本をスキャンする機械であるDIYBookScannerのキャプチャソフトです。  
+非破壊で本をスキャンするDIYBookScannerのキャプチャソフトです。  
 ラズベリーパイ5と2つのカメラモジュールV3が接続された状態で動作します。  
 <https://note.com/fynote1009/>
 
